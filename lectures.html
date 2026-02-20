@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lectures</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>First Year AI Engineering Lectures</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About Me</a> |
+  <a href="publications.html">Publications</a> |
+  <a href="lectures.html">Lectures</a>
+</nav>
+
+<section>
+  <h2>Upload Lecture</h2>
+  
+  <form id="uploadForm">
+    <input type="file" id="lectureFile" />
+    <button type="button" onclick="uploadLecture()">Upload</button>
+  </form>
+
+  <h3>Uploaded Files:</h3>
+  <ul id="uploadedList"></ul>
+</section>
+
+<script>
+function uploadLecture() {
+  const input = document.getElementById('lectureFile');
+  const list = document.getElementById('uploadedList');
+
+  if(input.files.length === 0){
+    alert("Please select a file!");
+    return;
+  }
+
+  const fileName = input.files[0].name;
+
+  // مجرد عرض اسم الملف مؤقتًا (Front-end فقط)
+  const li = document.createElement('li');
+  li.textContent = fileName;
+  list.appendChild(li);
+
+  input.value = "";
+}
+</script>
+
+<footer>
+  <p>© 2026 Faris Karim</p>
+</footer>
+
+</body>
+</html>
